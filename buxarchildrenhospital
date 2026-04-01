@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buxar Children Hospital</title>
+
+<meta name="google-site-verification" content="LpzPWf1aqM1yccCA18gjK5bAeLMadWxDdsQT7ZtsVRM" />
+</head>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f4fbff;
+}
+
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(90deg, #4da6ff, #00cc99);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* HERO */
+.hero {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+  url('https://images.unsplash.com/photo-1584515933487-779824d29309');
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+.hero img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 40px;
+}
+
+.hero button {
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  background: #00cc99;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* SECTIONS */
+section {
+  padding: 60px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SERVICES */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  margin: 15px;
+  padding: 25px;
+  border-radius: 15px;
+  width: 220px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* DOCTOR */
+.doctor {
+  background: #e6fff7;
+}
+
+/* FORM */
+form input, form textarea {
+  width: 70%;
+  padding: 12px;
+  margin: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background: #4da6ff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+}
+
+/* REVIEW */
+.review-box {
+  background: white;
+  padding: 15px;
+  margin: 10px auto;
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer {
+  background: #333;
+  color: white;
+  padding: 20px;
+}
+
+/* FLOAT BUTTONS */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.facebook {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #1877f2;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>Buxar Children Hospital</h1>
+  <p>Care, Comfort & Compassion for Every Child</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#services">Services</a>
+  <a href="#doctor">Doctor</a>
+  <a href="#appointment">Appointment</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+  <img src="https://cdn-icons-png.flaticon.com/512/387/387561.png">
+  <h1>Compassionate Pediatric Care</h1>
+  <p>24/7 Emergency Services Available</p>
+  <button onclick="alert('Call: 7295898108')">Emergency</button>
+</div>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">💉 Vaccination</div>
+    <div class="card">🩺 OPD</div>
+    <div class="card">👶 NICU</div>
+  </div>
+
+  <p><b>All Services Available Monday – Sunday</p>
+  <p>OPD Closed: Saturday only</p>
+</section>
+
+<section id="doctor" class="doctor">
+  <h2>Our Specialist</h2>
+  <h3>Dr. Nand Kishore Singh</h3>
+  <p><b>Pediatrician (Newborn & Child Specialist)</b></p>
+  <p>M.B.B.S., M.D. Pediatrics (PMCH, Patna)</p>
+  <p>Former Senior Resident (NMCH)</p>
+  <p>Specialist Medical Officer, Shahpur</p>
+</section>
+
+<section id="appointment">
+  <h2>Book Appointment</h2>
+  <form onsubmit="submitAppointment(event)">
+    <input id="appName" type="text" placeholder="Your Name" required><br>
+    <input id="appPhone" type="tel" placeholder="Phone Number" required><br>
+    <textarea id="appMsg" placeholder="Message"></textarea><br>
+    <button>Submit</button>
+  </form>
+</section>
+
+<section id="reviews">
+  <h2>Patient Reviews</h2>
+
+  <div id="reviewList"></div>
+
+  <form onsubmit="addReview(event)">
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <textarea id="review" placeholder="Write your review" required></textarea><br>
+    <button>Submit Review</button>
+  </form>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>📞 7295898108</p>
+  <p>📍 Bazar Samiti Road, Buxar (Bihar)</p>
+
+  <iframe 
+  src="https://www.google.com/maps?q=Buxar+Children+Hospital+Bazar+Samiti+Road+Buxar+Bihar&output=embed"
+  width="80%" height="300">
+</iframe>
+</section>
+
+<footer>
+  <p>© 2026 Buxar Children Hospital</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/917295898108" target="_blank">WhatsApp</a>
+<a class="facebook" href="https://www.facebook.com/profile.php?id=61585432346080" target="_blank">Facebook</a>
+
+<script>
+
+/* SCROLL ANIMATION */
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      sec.classList.add("show");
+    }
+  });
+});
+
+/* REVIEW SYSTEM */
+function addReview(e){
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let review = document.getElementById("review").value;
+
+  let div = document.createElement("div");
+  div.className = "review-box";
+  div.innerHTML = "<b>" + name + "</b><p>" + review + "</p>";
+
+  document.getElementById("reviewList").appendChild(div);
+
+  document.getElementById("name").value = "";
+  document.getElementById("review").value = "";
+}
+
+/* APPOINTMENT SYSTEM */
+function submitAppointment(e){
+  e.preventDefault();
+
+  let name = document.getElementById("appName").value;
+  let phone = document.getElementById("appPhone").value;
+
+  alert("Appointment booked for " + name + "\\nPhone: " + phone);
+
+  document.getElementById("appName").value = "";
+  document.getElementById("appPhone").value = "";
+  document.getElementById("appMsg").value = "";
+}
+
+</script>
+
+</body>
+</html>
